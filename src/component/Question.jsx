@@ -10,11 +10,12 @@ export default function Question(props){
     const classList= `option ${props.style}`;
 
     function createAnsweroptions(){
+
         const answerArr = props.qItem.incorrect_answers.concat(props.qItem.correct_answer);
         const answerOption = answerArr.map((opt,id) => {
             const liLabel = convertHTML(opt);
             return(
-                <li className={classList} key={id} 
+                <li className={classList} key={id} data-qid={props.qid}
                     data-correctanswer={id === answerArr.length-1 ? true: false}
                     data-answer={liLabel} 
                     onClick={props.selectAnswer}>

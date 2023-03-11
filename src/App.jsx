@@ -25,13 +25,14 @@ function App() {
         }
       })
   }
+  /* Restart quiz */
   function handleRestart(){
     setQuizdata(initialState);
   }
+  /* handle user submission*/ 
   function handleSubmit(){
     const allElement = document.getElementsByClassName("answer--option");
     let userScore = 0
-
     for (let item of allElement) {
       for( let liItem of item.children)
       {
@@ -73,14 +74,25 @@ function App() {
       .then(data => setData(data.results))
   },[quiz.questions.length]);
   
+  /*
+  Function to remove previous user selection  and select only one answer at a time
+  */
   function selectAnswer(e){
+    const eleKey =`[data-qid="${e.currentTarget.dataset.qid}"]`;
+    const ele = document.querySelectorAll(eleKey);
+    for(let i=0;i<ele.length;i++){
+      if(ele[i].classList.contains("blue"))
+       {
+        ele[i].classList.remove("blue")
+       } 
+    }    
     e.currentTarget.classList.remove("default")
-    e.currentTarget.classList.contains("blue") ? e.currentTarget.classList.remove("blue") : e.currentTarget.classList.add("blue")
+    e.currentTarget.classList.add("blue")
   }
 
   const quizzlet = quiz.questions.map((item,index)=>{
      const inputStyle = item.userAnswer? "user--selected" : "default"
-     return (<Question key={index} qItem={item} selectAnswer={selectAnswer} style={inputStyle} />)
+     return (<Question key={index} qid={index} qItem={item} selectAnswer={selectAnswer} style={inputStyle} />)
   })
  
   return (
