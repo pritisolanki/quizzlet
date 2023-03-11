@@ -3,7 +3,9 @@ import "./Question.css"
 
 export default function Question(props){
     function convertHTML(str){
-        return str.replace(/&quot;/g, '"').replace(/&#039;/g, '\'');
+        return str.replace(/&quot;/g, '"')
+                  .replace(/&#039;/g, '\'')
+                  .replace(/&ndash;/g,'-');
     }
     const classList= `option ${props.style}`;
 

@@ -34,8 +34,6 @@ function App() {
           liItem.classList.add("pink");
         } 
      }
-
-     console.log("-------------------")
   }
 }
 
@@ -49,8 +47,7 @@ function App() {
   }
   
  useEffect( () =>{
-      console.log("in fetch"+ JSON.stringify(quiz))
-      fetch('https://opentdb.com/api.php?amount=5&category=17&difficulty=hard&type=multiple')
+      fetch('https://opentdb.com/api.php?amount=5&category=18&difficulty=hard&type=multiple')
       .then(res => res.json())
       .then(data => setData(data.results))
   },[]);

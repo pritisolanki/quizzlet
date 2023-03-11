@@ -1,15 +1,18 @@
 .main--container{
-  border: 1px solid yellowgreen;
+  display: flex;
+  justify-content: center;
 }
+
 .quiz--container{
   position: relative;
-  width: 600px;
+  width: 650px;
   height: 759px;
   border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
 .right--top{
   position: absolute;
   top: 0px;
