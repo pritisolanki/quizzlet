@@ -12,11 +12,14 @@
   flex-direction: row;
   justify-content: center;
 }
-
+.playText{
+  text-align:  center;
+}
 .right--top{
   position: absolute;
   top: 0px;
   right: 0px;
+  border-color: 1px solid greenyellow;
 }
 .botton--left{
   position: absolute;
@@ -51,4 +54,12 @@
 .btnContainer{
   display: flex;
   justify-content: center;
+}
+
+.hide--container{
+  display: hidden;
+}
+
+.show--container{
+  display: block;
 }
