@@ -2,13 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-
-/*import TagManager from 'react-gtm-module'
-
-const tagManagerArgs = {
-  gtmId: 'G-TKL82ZCZDH'
-}
-TagManager.initialize(tagManagerArgs)*/
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-TKL82ZCZDH');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
