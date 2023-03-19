@@ -8,6 +8,12 @@ const tagManagerArgs = {
   gtmId: 'G-TKL82ZCZDH'
 }
 TagManager.initialize(tagManagerArgs)
+TagManager.dataLayer({
+  dataLayer: {
+    event: 'Pageview',
+    'pageTitle': 'Quizzlet',
+  }
+});
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />

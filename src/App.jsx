@@ -5,6 +5,7 @@ import './App.css'
 import Intro from './component/Intro'
 import Question from './component/Question'
 import Footer from './component/Footer'
+import TagManager from 'react-gtm-module'
 
 const initialState = {
   questions:[],
@@ -32,7 +33,13 @@ function App() {
   /* handle user submission*/ 
   function handleSubmit(){
     const allElement = document.getElementsByClassName("answer--option");
-    let userScore = 0
+    let userScore = 0;
+    TagManager.dataLayer({
+      dataLayer: {
+        event: 'Quiz submitted',
+        'pageTitle': 'Quizzlet'
+      }
+    });
     for (let item of allElement) {
       for( let liItem of item.children)
       {
