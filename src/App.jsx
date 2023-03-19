@@ -37,6 +37,7 @@ function App() {
     let userScore = 0;
     ReactGA.event({
       category: 'User',
+      'pageTitle': 'Quizzlet',
       'action': 'Finish quiz'
     });
     for (let item of allElement) {
