@@ -9,7 +9,7 @@ import ReactGA from 'react-ga';
 ReactGA.initialize('G-TKL82ZCZDH')
 ReactGA.event({
     category: 'Pageview',
-    'pageTitle': 'Quizzlet'
+    'page_view': 'Quizzlet'
 });
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
